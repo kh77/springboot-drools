@@ -1,0 +1,26 @@
+package KieRule;
+import com.sm.model.Order;
+
+rule "MCB"
+
+when
+order : Order(cardType=="MCB" && price > 1500);
+then
+order.setDiscount(15);
+end;
+
+rule "HABIB"
+
+when
+order : Order(cardType=="HABIB" && price > 1000);
+then
+order.setDiscount(10);
+end;
+
+rule "ASKARI"
+
+when
+order : Order(cardType=="ASKARI" && price > 500);
+then
+order.setDiscount(5);
+end;
